@@ -527,7 +527,7 @@ open class BMPlayerControlView: UIView {
         topWrapperView.addSubview(chooseDefinitionView)
         
         backButton.tag = BMPlayerControlView.ButtonType.back.rawValue
-        backButton.setImage(BMImageResourcePath("Pod_Asset_BMPlayer_back"), for: .normal)
+        backButton.setImage(BMImageResourcePath("BMPlayer_back"), for: .normal)
         backButton.addTarget(self, action: #selector(onButtonPressed(_:)), for: .touchUpInside)
         
         titleLabel.textColor = UIColor.white
@@ -546,8 +546,8 @@ open class BMPlayerControlView: UIView {
         bottomWrapperView.addSubview(fullscreenButton)
         
         playButton.tag = BMPlayerControlView.ButtonType.play.rawValue
-        playButton.setImage(BMImageResourcePath("Pod_Asset_BMPlayer_play"),  for: .normal)
-        playButton.setImage(BMImageResourcePath("Pod_Asset_BMPlayer_pause"), for: .selected)
+        playButton.setImage(BMImageResourcePath("BMPlayer_play"),  for: .normal)
+        playButton.setImage(BMImageResourcePath("BMPlayer_pause"), for: .selected)
         playButton.addTarget(self, action: #selector(onButtonPressed(_:)), for: .touchUpInside)
         
         currentTimeLabel.textColor  = UIColor.white
@@ -564,7 +564,7 @@ open class BMPlayerControlView: UIView {
         timeSlider.maximumValue = 1.0
         timeSlider.minimumValue = 0.0
         timeSlider.value        = 0.0
-        timeSlider.setThumbImage(BMImageResourcePath("Pod_Asset_BMPlayer_slider_thumb"), for: .normal)
+        timeSlider.setThumbImage(BMImageResourcePath("BMPlayer_slider_thumb"), for: .normal)
         
         timeSlider.maximumTrackTintColor = UIColor.clear
         timeSlider.minimumTrackTintColor = BMPlayerConf.tintColor
@@ -582,8 +582,8 @@ open class BMPlayerControlView: UIView {
         progressView.trackTintColor = UIColor ( red: 1.0, green: 1.0, blue: 1.0, alpha: 0.3 )
         
         fullscreenButton.tag = BMPlayerControlView.ButtonType.fullscreen.rawValue
-        fullscreenButton.setImage(BMImageResourcePath("Pod_Asset_BMPlayer_fullscreen"),    for: .normal)
-        fullscreenButton.setImage(BMImageResourcePath("Pod_Asset_BMPlayer_portialscreen"), for: .selected)
+        fullscreenButton.setImage(BMImageResourcePath("BMPlayer_fullscreen"),    for: .normal)
+        fullscreenButton.setImage(BMImageResourcePath("BMPlayer_portialscreen"), for: .selected)
         fullscreenButton.addTarget(self, action: #selector(onButtonPressed(_:)), for: .touchUpInside)
         
         mainMaskView.addSubview(loadingIndicator)
@@ -603,11 +603,11 @@ open class BMPlayerControlView: UIView {
         seekToView.layer.masksToBounds  = true
         seekToView.isHidden             = true
         
-        seekToViewImage.image = BMImageResourcePath("Pod_Asset_BMPlayer_seek_to_image")
+        seekToViewImage.image = BMImageResourcePath("BMPlayer_seek_to_image")
         
         addSubview(replayButton)
         replayButton.isHidden = true
-        replayButton.setImage(BMImageResourcePath("Pod_Asset_BMPlayer_replay"), for: .normal)
+        replayButton.setImage(BMImageResourcePath("BMPlayer_replay"), for: .normal)
         replayButton.addTarget(self, action: #selector(onButtonPressed(_:)), for: .touchUpInside)
         replayButton.tag = ButtonType.replay.rawValue
         
@@ -761,8 +761,7 @@ open class BMPlayerControlView: UIView {
     }
     
     fileprivate func BMImageResourcePath(_ fileName: String) -> UIImage? {
-        let bundle = Bundle(for: BMPlayer.self)
-        return UIImage(named: fileName, in: bundle, compatibleWith: nil)
+        return UIImage(named: fileName)
     }
 }
 
