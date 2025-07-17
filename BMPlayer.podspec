@@ -24,14 +24,14 @@ end
 s.subspec 'Full' do |full|
     full.source_files = 'Source/*.swift','Source/Default/*'
     full.dependency 'BMPlayer/Core'
-    full.dependency 'SnapKit', '~> 5.0.0'
+    full.dependency 'SnapKit'
     full.dependency 'NVActivityIndicatorView', '~> 4.7.0'
 end
 
 s.subspec 'CacheSupport' do |cache|
     cache.source_files = 'Source/*.swift','Source/CacheSupport/*'
     cache.dependency 'BMPlayer/Core'
-    cache.dependency 'SnapKit', '~> 5.0.0'
+    cache.dependency 'SnapKit'
     cache.dependency 'NVActivityIndicatorView', '~> 4.7.0'
     cache.dependency 'VIMediaCache'
 end
