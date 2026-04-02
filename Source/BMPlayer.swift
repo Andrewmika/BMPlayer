@@ -277,7 +277,6 @@ open class BMPlayer: UIView {
             // 比如水平移动结束时，要快进到指定位置，如果这里没有判断，当我们调节音量完之后，会出现屏幕跳动的bug
             switch (self.panDirection) {
             case BMPanDirection.horizontal:
-                controlView.hideSeekToView()
                 isSliderSliding = false
                 if isPlayToTheEnd {
                     isPlayToTheEnd = false
